@@ -1,0 +1,7 @@
+variables:
+  service_name: bars-mock-receiver
+  short_service_name: bmr
+  service_base_path: bars-mock-receiver
+  product_display_name: Bars Mock Receiver
+  product_description: This proxy only acts as a mock receiver.
+  spec_file: bars-mock-receiver.json
