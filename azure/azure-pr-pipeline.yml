@@ -12,7 +12,7 @@ resources:
       endpoint: NHSDigital
   pipelines:
   - pipeline: build_pipeline
-    source: "bars-mock-receiver-Build"
+    source: "bars-mock-receiver-proxy-Build"
     trigger:
       branches:
         exclude:
