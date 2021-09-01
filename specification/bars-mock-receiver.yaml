@@ -1,12 +1,12 @@
 openapi: "3.0.0"
 x-nhs-api-spec-guid: ae3194e8-c499-4c15-b0c5-9a9e5449cf5b
 x-meta:
-  service_name: "bars-mock-receiver"
+  service_name: "bars-mock-receiver-proxy"
   short_service_name: "bmr"
   product_display_name: "Bars Mock Receiver"
-  service_base_path: "bars-mock-receiver"
+  service_base_path: "bars-mock-receiver-proxy"
   product_description: "This proxy only acts as a mock receiver."
-  pipeline_name_prefix: "bars-mock-receiver"
+  pipeline_name_prefix: "bars-mock-receiver-proxy"
 info:
   version: 1.0.0
   title: Generated Template API
