@@ -20,7 +20,7 @@ APIGEE_ENVIRONMENTS:
 ---
 meta:
   api:
-    name: bars-mock-receiver
+    name: bars-mock-receiver-proxy
     guid: 7403c3e5-b88d-44c3-a379-5dcb36fff8e1
     spec_guids:
       - ae3194e8-c499-4c15-b0c5-9a9e5449cf5b
