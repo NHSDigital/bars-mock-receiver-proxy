@@ -1,4 +1,4 @@
-SERVICE_NAME: bars-mock-receiver
+SERVICE_NAME: bars-mock-receiver-proxy
 PRODUCT_DISPLAY_NAME: Bars Mock Receiver
 DESCRIPTION: This proxy only acts as a mock receiver.
 APIGEE_ENVIRONMENTS:
