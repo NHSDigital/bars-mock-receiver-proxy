@@ -33,6 +33,7 @@ def status():
         mimetype="application/json",
     )
 
+
 def response_builder(http_code_response, env_name):
     if http_code_response == "200":
         return (
