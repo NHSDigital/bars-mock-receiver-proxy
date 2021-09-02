@@ -1,6 +1,6 @@
 # Bars Mock Receiver
 
-![Build](https://github.com/NHSDigital/bars-mock-receiver/workflows/Build/badge.svg?branch=master)
+![Build](https://github.com/NHSDigital/bars-mock-receiver-proxy/workflows/Build/badge.svg?branch=master)
 
 This is a RESTful HL7® FHIR® API specification for the *Template API*.
 
@@ -12,7 +12,7 @@ This is a RESTful HL7® FHIR® API specification for the *Template API*.
 Consumers of the API will find developer documentation on the [NHS Digital Developer Hub](https://developer.digital.nhs.uk/).
 
 ## Contributing
-Contributions to this project are welcome from anyone, providing that they conform to the [guidelines for contribution](https://github.com/NHSDigital/bars-mock-receiver/blob/master/CONTRIBUTING.md) and the [community code of conduct](https://github.com/NHSDigital/bars-mock-receiver/blob/master/CODE_OF_CONDUCT.md).
+Contributions to this project are welcome from anyone, providing that they conform to the [guidelines for contribution](https://github.com/NHSDigital/bars-mock-receiver-proxy/blob/master/CONTRIBUTING.md) and the [community code of conduct](https://github.com/NHSDigital/bars-mock-receiver-proxy/blob/master/CODE_OF_CONDUCT.md).
 
 ### Licensing
 This code is dual licensed under the MIT license and the OGL (Open Government License). Any new work added to this repository must conform to the conditions of these licenses. In particular this means that this project may not depend on GPL-licensed or AGPL-licensed libraries, as these would violate the terms of those libraries' licenses.
