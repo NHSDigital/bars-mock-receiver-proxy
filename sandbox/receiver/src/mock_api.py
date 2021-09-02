@@ -19,6 +19,20 @@ def meta():
     )
 
 
+@app.route("/_status")
+def status():
+    global expected_response
+    env_name = os.environ["ENV_NAME"]
+
+    # if "response-type" in request.headers:
+    #     expected_response = request.headers["response-type"]
+
+    return Response(
+        response_builder(expected_response, env_name),
+        status=expected_response,
+        mimetype="application/json",
+    )
+
 def response_builder(http_code_response, env_name):
     if http_code_response == "200":
         return (
