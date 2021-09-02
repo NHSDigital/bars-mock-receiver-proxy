@@ -5,7 +5,6 @@ install-python:
 
 install-node:
 	npm install
-	cd sandbox && npm install
 
 .git/hooks/pre-commit:
 	cp scripts/pre-commit .git/hooks/pre-commit
