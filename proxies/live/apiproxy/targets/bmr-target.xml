@@ -24,12 +24,13 @@
     </Request>
   </PreFlow>
     <HTTPTargetConnection>
+      {{ HOSTED_TARGET_CONNECTION }}
       <!-- <SSLInfo>
         <Enabled>true</Enabled>
         <TrustStore>ref://bars-test</TrustStore>
       </SSLInfo> -->
-      <LoadBalancer>
+      <!-- <LoadBalancer>
         <Server name="bars-mock-receiver" />
-      </LoadBalancer>
+      </LoadBalancer> -->
     </HTTPTargetConnection>
 </TargetEndpoint>
