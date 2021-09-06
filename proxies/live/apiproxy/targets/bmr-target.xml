@@ -28,9 +28,10 @@
         <Enabled>true</Enabled>
         <TrustStore>ref://bars-test</TrustStore>
       </SSLInfo>
-      <LoadBalancer>
+        {{ HOSTED_TARGET_CONNECTION }}
+      <!-- <LoadBalancer>
         <Server name="bars-mock-receiver" />
-      </LoadBalancer>
+      </LoadBalancer> -->
     </HTTPTargetConnection>
 <!--  
   <HTTPTargetConnection>
