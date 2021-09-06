@@ -23,18 +23,16 @@
       </Step>
     </Request>
   </PreFlow>
-  <!--
-    To point to a named target server as this is how it SHOULD be implemented:
-    For example:
     <HTTPTargetConnection>
       <SSLInfo>
         <Enabled>true</Enabled>
+        <TrustStore>ref://bars-test</TrustStore>
       </SSLInfo>
       <LoadBalancer>
         <Server name="bars-mock-receiver" />
       </LoadBalancer>
     </HTTPTargetConnection>
-  -->
+<!--  
   <HTTPTargetConnection>
     <URL>http://mocktarget.apigee.net</URL>
     <Properties>
@@ -42,5 +40,5 @@
       <Property name="request.retain.headers">User-Agent,Referer,Accept-Language</Property>
       <Property name="retain.queryparams">apikey</Property>
     </Properties>
-  </HTTPTargetConnection>
+  </HTTPTargetConnection> -->
 </TargetEndpoint>
