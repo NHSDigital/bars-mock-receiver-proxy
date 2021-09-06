@@ -24,10 +24,10 @@
     </Request>
   </PreFlow>
     <HTTPTargetConnection>
-      <SSLInfo>
+      <!-- <SSLInfo>
         <Enabled>true</Enabled>
         <TrustStore>ref://bars-test</TrustStore>
-      </SSLInfo>
+      </SSLInfo> -->
       <LoadBalancer>
         <Server name="bars-mock-receiver" />
       </LoadBalancer>
