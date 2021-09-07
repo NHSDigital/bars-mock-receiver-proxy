@@ -25,12 +25,5 @@
   </PreFlow>
     <HTTPTargetConnection>
       {{ HOSTED_TARGET_CONNECTION }}
-      <!-- <SSLInfo>
-        <Enabled>true</Enabled>
-        <TrustStore>ref://bars-test</TrustStore>
-      </SSLInfo> -->
-      <!-- <LoadBalancer>
-        <Server name="bars-mock-receiver" />
-      </LoadBalancer> -->
     </HTTPTargetConnection>
 </TargetEndpoint>
