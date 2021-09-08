@@ -1,0 +1,8 @@
+{
+  "resourceType": "<endpoint-name>",
+  "meta": {
+    "profile": [
+      "https://www.hl7.org/fhir/appointment"
+    ]
+  }
+}

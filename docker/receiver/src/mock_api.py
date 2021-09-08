@@ -1,6 +1,12 @@
 from flask import Flask, Response
+from routes.appointment import appointment
 
+import os
+import sys
+
+sys.path.append(os.getcwd())
 app = Flask(__name__)
+app.register_blueprint(appointment)
 
 
 @app.route("/meta")
