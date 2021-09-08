@@ -15,7 +15,7 @@ def status():
 
 @app.route("/slots")
 def slots():
-    return request
+    return request.data
     # return Response(status=401)
 
 
