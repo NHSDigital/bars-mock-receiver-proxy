@@ -15,6 +15,9 @@ def status():
 
 @app.route("/slots")
 def slots():
+    if "response-type" in request.headers:
+        expected_response = request.headers["response-type"]
+        return "401"
     return Response(status=200)
 
 
