@@ -15,10 +15,9 @@ def status():
 
 @app.route("/slots")
 def slots():
-    if "a-test" in request.body:
-        # expected_response = request.headers["response-type"]
-        return Response(status=200)
-    return Response(status=401)
+    status=200
+    return request
+    # return Response(status=401)
 
 
 if __name__ == "__main__":
