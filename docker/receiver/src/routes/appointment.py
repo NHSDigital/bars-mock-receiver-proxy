@@ -1,35 +1,34 @@
 from flask import Blueprint
-
-from responses.response_bank import responses
+from .examples.example_loader import load_example
 
 appointment = Blueprint('environments', __name__)
 
 
 @appointment.route('/Appointment', methods=['GET'])
 def get_appointments():
-    return 'you hit env'
+    return load_example('appointment/GET-success.json')
 
 
 @appointment.route('/Appointment', methods=['POST'])
 def create_appointment():
-    return 'you post to env'
+    return load_example('appointment/POST-success.txt')
 
 
 @appointment.route('/Appointment/<_id>', methods=['GET'])
-def get_appointment(_id: int):
-    return responses.success('Appointment')
+def get_appointment(_id: str):
+    return load_example('appointment/id/GET-success.json')
 
 
 @appointment.route('/Appointment/<_id>', methods=['PATCH'])
-def patch_appointment(_id: int):
-    return f'/PATCH {_id}'
+def patch_appointment(_id: str):
+    return ''
 
 
 @appointment.route('/Appointment/<_id>', methods=['PUT'])
-def update_appointment(_id: int):
-    return f'/PUT {_id}'
+def update_appointment(_id: str):
+    return ''
 
 
 @appointment.route('/Appointment/<_id>', methods=['DELETE'])
-def delete_appointment(_id: int):
-    return f'/DELETE {_id}'
+def delete_appointment(_id: str):
+    return ''

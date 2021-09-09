@@ -1,10 +1,7 @@
 from flask import Flask, Response
 from routes.appointment import appointment
+from routes.examples.example_loader import load_example
 
-import os
-import sys
-
-sys.path.append(os.getcwd())
 app = Flask(__name__)
 app.register_blueprint(appointment)
 
@@ -16,7 +13,7 @@ def meta():
 
 @app.route("/_status")
 def status():
-    return Response(status=200)
+    return load_example('status/_status.json')
 
 
 if __name__ == "__main__":
