@@ -15,8 +15,9 @@ def status():
 
 @app.route("/slots")
 def slots():
-    return request.query_string
-    # return Response(status=401)
+    if "test" in request.args
+        return request.args.get('test')
+    return Response(status=401)
 
 
 if __name__ == "__main__":
