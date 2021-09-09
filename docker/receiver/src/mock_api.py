@@ -15,7 +15,7 @@ def status():
 
 @app.route("/slots")
 def slots():
-    if "test" in request.args
+    if "test" in request.args:
         return request.args.get('test')
     return Response(status=401)
 
