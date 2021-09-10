@@ -1,4 +1,4 @@
-from flask import Blueprint, Request, Response
+from flask import Blueprint, request, Response
 from .examples.example_loader import load_example
 
 slots = Blueprint('slots', __name__)
@@ -6,7 +6,7 @@ slots = Blueprint('slots', __name__)
 
 @slots.route('/Slots', methods=['GET'])
 def get_slots():
-    if "start" not in Request.args:
+    if "start" not in request.args:
         status = 400
 
     if status == 400:
