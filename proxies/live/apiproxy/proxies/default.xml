@@ -37,6 +37,13 @@
       <Condition>(proxy.pathsuffix MatchesPath "/_status") and ((request.verb = "GET") or (request.verb = "HEAD"))
       </Condition>
     </Flow>
+    <Flow name="SlotEndpoint">
+          <Step>
+              <Name>Slots.CheckEndpoints</Name>
+          </Step>
+          <Condition>(proxy.pathsuffix MatchesPath "/Slot") and ((request.verb = "GET") or (request.verb = "HEAD"))
+          </Condition>
+    </Flow>
   </Flows>
   <PreFlow/>
   <PostClientFlow name="PostClientFlow">

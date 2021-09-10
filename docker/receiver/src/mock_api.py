@@ -13,11 +13,25 @@ def status():
     return Response(status=200)
 
 
-@app.route("/slots")
+@app.route("/Slot")
 def slots():
-    if "test" in request.args:
-        return request.args.get('test')
-    return Response(status=401)
+    return Response(status=200)
+    # status = 200
+    # if "healthcareService" not in request.args:
+    #     status = 400
+    # if "status" not in request.args:
+    #     status = 400
+    # if "start" not in request.args:
+    #     status = 400
+    # if "end" not in request.args:
+    #     status = 400
+    # if "_include" not in request.args:
+    #     status = 400
+    #
+    # if status == 400:
+    #     return Response('Bad Request', status=status)
+    # else:
+    #     return Response('Success', status=status)
 
 
 if __name__ == "__main__":
