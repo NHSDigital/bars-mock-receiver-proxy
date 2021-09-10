@@ -1,11 +1,11 @@
 from flask import Flask, Response
 from routes.appointment import appointment
-# from routes.slots import slots
+from routes.slots import slots
 from routes.examples.example_loader import load_example
 
 app = Flask(__name__)
 app.register_blueprint(appointment)
-# app.register_blueprint(slots)
+app.register_blueprint(slots)
 
 
 @app.route("/meta")
