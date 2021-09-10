@@ -8,7 +8,7 @@ slots = Blueprint('slots', __name__)
 def get_slots():
     if "start" not in Request.args:
         status = 400
-    
+
     if status == 400:
         return Response('Bad Request', status)
     return load_example('slots/GET-success.json')
