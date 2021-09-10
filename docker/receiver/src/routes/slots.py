@@ -1,4 +1,4 @@
-from flask import Blueprint, Request
+from flask import Blueprint
 from .examples.example_loader import load_example
 
 slots = Blueprint('environments', __name__)
