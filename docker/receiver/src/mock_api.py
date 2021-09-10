@@ -1,9 +1,11 @@
 from flask import Flask, Response
 from routes.appointment import appointment
+from routes.service_request import service_request
 from routes.examples.example_loader import load_example
 
 app = Flask(__name__)
 app.register_blueprint(appointment)
+app.register_blueprint(service_request)
 
 
 @app.route("/meta")
