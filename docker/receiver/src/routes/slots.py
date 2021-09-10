@@ -19,5 +19,5 @@ def get_slots():
         status = 400
 
     if status == 400:
-        return Response('Bad Request', status)
+        return Response(load_example('slots/GET-BadRequest.json'), status)
     return load_example('slots/GET-success.json')
