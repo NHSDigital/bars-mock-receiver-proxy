@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, Response
 from .examples.example_loader import load_example
 
 appointment = Blueprint('environments', __name__)
@@ -11,7 +11,8 @@ def get_appointments():
 
 @appointment.route('/Appointment', methods=['POST'])
 def create_appointment():
-    return load_example('appointment/POST-success.txt')
+    body = load_example('appointment/POST-success.txt')
+    return Response(body, status=201)
 
 
 @appointment.route('/Appointment/<_id>', methods=['GET'])

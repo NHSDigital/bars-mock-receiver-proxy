@@ -9,4 +9,4 @@ def load_example(path: str):
         if path.endswith('json'):
             return json.load(f)
         else:
-            return f.read()
+            return f.read().strip()
