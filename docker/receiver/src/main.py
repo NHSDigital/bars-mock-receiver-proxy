@@ -1,7 +1,6 @@
 import uvicorn
 
-from typing import Optional
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI
 from datetime import datetime
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import PlainTextResponse
@@ -20,8 +19,15 @@ app = FastAPI()
 def validation_exception_handler(request, exc):
     return PlainTextResponse(str("something"), status_code=400)
 
+
 @app.get("/Slot")
-def Slot(healthcareService: str, status: Status, start: datetime, end: datetime, _include: str):
+def Slot(
+    healthcareService: str,
+    status: Status,
+    start: datetime,
+    end: datetime,
+    _include: str,
+):
     return {"healthcareService": healthcareService}
 
 
