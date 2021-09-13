@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from enum import Enum
 from datetime import datetime
+from .examples.example_loader import load_example
 
 
 route = APIRouter()
@@ -19,4 +20,4 @@ def Slot(
     end: datetime,
     _include: str,
 ):
-    return {"healthcareService": healthcareService}
+    return load_example("slots/GET-success.json")
