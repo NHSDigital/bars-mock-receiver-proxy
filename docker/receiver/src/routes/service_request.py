@@ -1,36 +1,50 @@
-from flask import Blueprint, Response
+from fastapi import APIRouter, Header
+from uuid import UUID
 from .examples.example_loader import load_example
-
-service_request = Blueprint('service_request', __name__)
-
-
-@service_request.route('/ServiceRequest', methods=['GET'])
-def get_referrals():
-    return load_example('service_request/GET-success.json')
+from pydantic import BaseModel
 
 
-@service_request.route('/ServiceRequest', methods=['POST'])
-def create_referrals():
-    body = ''
-
-    return Response(body, status=201)
+route = APIRouter()
 
 
-@service_request.route('/ServiceRequest/<_id>', methods=['GET'])
-def get_referral(_id: str):
-    return load_example('service_request/id/GET-success.json')
+class Profile(BaseModel):
+    profile: list
 
 
-@service_request.route('/ServiceRequest/<_id>', methods=['PUT'])
-def put_referral(_id: str):
-    return load_example('service_request/id/PUT-success.json')
+class ServiceRequestBody(BaseModel):
+    resourceType: str
+    meta: Profile
 
 
-@service_request.route('/ServiceRequest/<_id>', methods=['PATCH'])
-def patch_referral(_id: str):
-    return load_example('service_request/id/PATCH-success.json')
+@route.get("/ServiceRequest")
+def get_service_request(
+    patientIdentifier: str, NHSD_ServiceIdentifier: str = Header(...)
+):
+    return load_example("service_request/GET-success.json")
 
 
-@service_request.route('/ServiceRequest/<_id>', methods=['DELETE'])
-def delete_referral(_id: str):
-    return ''
+@route.post("/ServiceRequest", status_code=201)
+def post_service_request(
+    body: ServiceRequestBody, NHSD_ServiceIdentifier: str = Header(...)
+):
+    return ""
+
+
+@route.get("/ServiceRequest/{id}")
+def get_service_request_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+    return load_example("service_request/id/GET-success.json")
+
+
+@route.patch("/ServiceRequest/{id}")
+def patch_service_request_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+    return load_example("service_request/id/PATCH-success.json")
+
+
+@route.put("/ServiceRequest/{id}")
+def put_service_request_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+    return load_example("service_request/id/PUT-success.json")
+
+
+@route.delete("/ServiceRequest/{id}")
+def delete_service_request_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+    return ""

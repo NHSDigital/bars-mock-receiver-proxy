@@ -1,9 +1,10 @@
-from flask import Blueprint
+from fastapi import APIRouter, Header
 from .examples.example_loader import load_example
 
-process_message = Blueprint('process_message', __name__)
+
+route = APIRouter()
 
 
-@process_message.route('/$process-message', methods=['POST'])
-def create_process_message():
-    return load_example('process_message/POST-success.json')
+@route.post("/$process-message")
+def post_process_message(NHSD_ServiceIdentifier: str = Header(...)):
+    return load_example("process_message/POST-success.json")

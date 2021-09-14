@@ -1,35 +1,50 @@
-from flask import Blueprint, Response
+from fastapi import APIRouter, Header
+from uuid import UUID
 from .examples.example_loader import load_example
-
-appointment = Blueprint('environments', __name__)
-
-
-@appointment.route('/Appointment', methods=['GET'])
-def get_appointments():
-    return load_example('appointment/GET-success.json')
+from pydantic import BaseModel
 
 
-@appointment.route('/Appointment', methods=['POST'])
-def create_appointment():
-    body = load_example('appointment/POST-success.txt')
-    return Response(body, status=201)
+route = APIRouter()
 
 
-@appointment.route('/Appointment/<_id>', methods=['GET'])
-def get_appointment(_id: str):
-    return load_example('appointment/id/GET-success.json')
+class Profile(BaseModel):
+    profile: list
 
 
-@appointment.route('/Appointment/<_id>', methods=['PATCH'])
-def patch_appointment(_id: str):
-    return ''
+class AppointmentBody(BaseModel):
+    resourceType: str
+    meta: Profile
 
 
-@appointment.route('/Appointment/<_id>', methods=['PUT'])
-def update_appointment(_id: str):
-    return ''
+@route.get("/Appointment")
+def get_appointment(patientIdentifier: str, NHSD_ServiceIdentifier: str = Header(...)):
+    return load_example("appointment/GET-success.json")
 
 
-@appointment.route('/Appointment/<_id>', methods=['DELETE'])
-def delete_appointment(_id: str):
-    return ''
+@route.post("/Appointment", status_code=201)
+def create_appointment(NHSD_ServiceIdentifier: str = Header(...)):
+    return load_example("appointment/POST-success.txt")
+
+
+@route.get("/Appointment/{id}")
+def get_appointment_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+    return load_example("appointment/id/GET-success.json")
+
+
+@route.patch("/Appointment/{id}")
+def patch_appointment_id(
+    body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)
+):
+    return ""
+
+
+@route.put("/Appointment/{id}")
+def put_appointment_id(
+    body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)
+):
+    return ""
+
+
+@route.delete("/Appointment/{id}")
+def delete_appointment_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+    return ""
