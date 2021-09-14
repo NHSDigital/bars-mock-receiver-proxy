@@ -27,7 +27,7 @@ def get_service_request(
 def post_service_request(
     body: ServiceRequestBody, NHSD_ServiceIdentifier: str = Header(...)
 ):
-    return load_example("service_request/POST-success.json")
+    return ""
 
 
 @route.get("/ServiceRequest/{id}")
