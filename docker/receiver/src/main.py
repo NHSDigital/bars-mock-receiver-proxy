@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import PlainTextResponse
+from fastapi.responses import JSONResponse
 from routes import (
     slots,
     appointment,
@@ -19,7 +19,7 @@ app = FastAPI()
 @app.exception_handler(RequestValidationError)
 def validation_exception_handler(request, exc):
     response = load_example("bad-request.json")
-    return PlainTextResponse(str(response), status_code=400)
+    return JSONResponse(response, status_code=400)
 
 
 app.include_router(slots.route)
