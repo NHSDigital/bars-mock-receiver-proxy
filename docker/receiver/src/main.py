@@ -2,9 +2,15 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import PlainTextResponse
-from routes import slots
+from routes import (
+    slots,
+    appointment,
+    metadata,
+    service_request,
+    process_message,
+    document_reference,
+)
 from routes.examples.example_loader import load_example
-
 
 
 app = FastAPI()
@@ -17,6 +23,11 @@ def validation_exception_handler(request, exc):
 
 
 app.include_router(slots.route)
+app.include_router(appointment.route)
+app.include_router(metadata.route)
+app.include_router(service_request.route)
+app.include_router(process_message.route)
+app.include_router(document_reference.route)
 
 
 @app.get("/_status")
