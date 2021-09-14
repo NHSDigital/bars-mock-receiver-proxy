@@ -41,10 +41,10 @@ def patch_service_request_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)
 
 
 @route.put("/ServiceRequest/{id}")
-def patch_service_request_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+def put_service_request_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
     return load_example("service_request/id/PUT-success.json")
 
 
 @route.delete("/ServiceRequest/{id}")
-def patch_service_request_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+def delete_service_request_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
     return ""
