@@ -23,7 +23,7 @@ def get_service_request(
     return load_example("service_request/GET-success.json")
 
 
-@route.post("/ServiceRequest")
+@route.post("/ServiceRequest", status_code=201)
 def post_service_request(
     body: ServiceRequestBody, NHSD_ServiceIdentifier: str = Header(...)
 ):
