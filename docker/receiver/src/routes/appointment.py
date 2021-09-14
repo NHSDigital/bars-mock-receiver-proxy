@@ -1,9 +1,20 @@
-from fastapi import APIRouter, Header
+from fastapi import APIRouter, Header, Response, status
 from uuid import UUID
 from .examples.example_loader import load_example
+from pydantic import BaseModel
+
 
 
 route = APIRouter()
+
+
+class Profile(BaseModel):
+    profile: list
+
+
+class AppointmentBody(BaseModel):
+    resourceType: str
+    meta: Profile
 
 
 @route.get("/Appointment")
@@ -22,12 +33,11 @@ def get_appointment_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
 
 
 @route.patch("/Appointment/{id}")
-def patch_appointment_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
-    return ""
-
+def patch_appointment_id(body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+    return Response(status_code=status.HTTP_200_OK)
 
 @route.put("/Appointment/{id}")
-def put_appointment_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+def put_appointment_id(body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
     return ""
 
 
