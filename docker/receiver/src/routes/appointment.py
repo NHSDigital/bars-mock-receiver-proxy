@@ -4,7 +4,6 @@ from .examples.example_loader import load_example
 from pydantic import BaseModel
 
 
-
 route = APIRouter()
 
 
@@ -33,11 +32,16 @@ def get_appointment_id(id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
 
 
 @route.patch("/Appointment/{id}")
-def patch_appointment_id(body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+def patch_appointment_id(
+    body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)
+):
     return ""
 
+
 @route.put("/Appointment/{id}")
-def put_appointment_id(body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+def put_appointment_id(
+    body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)
+):
     return ""
 
 
