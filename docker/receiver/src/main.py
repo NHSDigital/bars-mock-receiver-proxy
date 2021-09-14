@@ -13,7 +13,6 @@ app = FastAPI()
 @app.exception_handler(RequestValidationError)
 def validation_exception_handler(request, exc):
     response = load_example("bad-request.json")
-    response['issue'][0]['diagnostics'] = exc
     return PlainTextResponse(str(response), status_code=400)
 
 
