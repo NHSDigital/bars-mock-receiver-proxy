@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Blueprint, request, Response
 from .examples.example_loader import load_example
 
@@ -15,9 +16,10 @@ def get_slots():
         status = 400
     if "end" not in request.args:
         status = 400
-    if "_include" not in request.args:
+    if "inclusions" not in request.args:
         status = 400
 
     if status == 400:
-        return Response(load_example('slots/GET-BadRequest.json'), status)
+        response = load_example('slots/GET-BadRequest.json')
+        return Response(str(response), status)
     return load_example('slots/GET-success.json')
