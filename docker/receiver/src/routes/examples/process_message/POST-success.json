@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "resourceType": "Bundle",
     "meta": {
       "profile": [
@@ -7,3 +8,13 @@
       "type": "message"
     }
   }
+=======
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/guide/UKCoreDevelopment2/ProfileUKCore-Bundle"
+    ],
+    "type": "message"
+  }
+}
+>>>>>>> c8f671a1d5384ee86e176929c305c9163eb09f19
