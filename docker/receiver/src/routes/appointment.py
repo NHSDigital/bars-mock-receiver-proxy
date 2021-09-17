@@ -49,7 +49,6 @@ def patch_appointment_id(response: Response,
         return load_example("entity-not-found.json")
 
 
-
 @route.put("/Appointment/{id}")
 def put_appointment_id(response: Response,
                        body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)
