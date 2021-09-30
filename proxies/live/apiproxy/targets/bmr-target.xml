@@ -3,10 +3,7 @@
   <PreFlow>
     <Request>
       <Step>
-        <Name>Quota</Name>
-      </Step>
-      <Step>
-        <Name>SpikeArrest</Name>
+        <Name>FlowCallout.ApplyRateLimiting</Name>
       </Step>
     </Request>
   </PreFlow>

@@ -22,6 +22,26 @@ apigee:
       - name: {{ NAME }}
         approvalType: auto
         attributes:
+          - name: ratelimiting
+            value:
+              my-proxy-internal-dev: # this controls the per-proxy rate limiting policies, AND MUST MATCH YOUR PROXY NAME
+                quota:
+                  enabled: true # boolean, set to false to disable the policy entirely.
+                  interval: 1 # number of timeunits to window over, non-zero positive int
+                  limit: 300 # non-zero positive int
+                  timeunit: minute # minute/hour
+                spikeArrest:
+                  enabled: true # boolean, set to false to disable the policy entirely
+                  ratelimit: 5ps # must end in pm/ps
+              app: # this controls the per-app rate limiting policies
+                quota:
+                  enabled: true
+                  interval: 1 # number of timeunits to window over, non-zero positive int
+                  limit: 300 # non-zero positive int
+                  timeunit: minute
+                spikeArrest:
+                  ratelimit: 5ps # must end in pm/ps
+                  enabled: false
           - name: access
             value: public
           - name: ratelimit
