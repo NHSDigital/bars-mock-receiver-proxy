@@ -24,7 +24,7 @@ apigee:
         attributes:
           - name: ratelimiting
             value:
-              my-proxy-internal-dev: # this controls the per-proxy rate limiting policies, AND MUST MATCH YOUR PROXY NAME
+              {{ ENV.name }}: # this controls the per-proxy rate limiting policies, AND MUST MATCH YOUR PROXY NAME
                 quota:
                   enabled: true # boolean, set to false to disable the policy entirely.
                   interval: 1 # number of timeunits to window over, non-zero positive int
