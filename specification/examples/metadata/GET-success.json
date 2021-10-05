@@ -1,0 +1,10 @@
+{
+  "resourceType": "CapabilityStatement",
+  "meta": {
+    "profile": [
+      "https://simplifier.net/guide/NHSBookingandReferrals/UKCore-CapabilityStatement"
+    ]
+  },
+  "fhirVersion": "4.0.1",
+  "status": "active"
+}
