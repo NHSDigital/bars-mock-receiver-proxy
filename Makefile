@@ -6,10 +6,10 @@ install-python:
 install-node:
 	npm install
 
-.git/hooks/pre-commit:
+pre-commit-hook:
 	cp scripts/pre-commit .git/hooks/pre-commit
 
-install: install-node install-python .git/hooks/pre-commit
+install: install-node install-python pre-commit-hook
 
 lint:
 	npm run lint
@@ -44,7 +44,7 @@ copy-examples:
 
 _dist_include="pytest.ini poetry.lock poetry.toml pyproject.toml Makefile build/. tests"
 
-release: clean publish build-proxy
+release: clean copy-examples publish build-proxy
 	mkdir -p dist
 	for f in $(_dist_include); do cp -r $$f dist; done
 	cp ecs-proxies-deploy.yml dist/ecs-deploy-internal-dev.yml
