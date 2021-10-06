@@ -6,10 +6,10 @@ install-python:
 install-node:
 	npm install
 
-.git/hooks/pre-commit:
+pre-commit-hook:
 	cp scripts/pre-commit .git/hooks/pre-commit
 
-install: install-node install-python .git/hooks/pre-commit
+install: install-node install-python pre-commit-hook
 
 lint:
 	npm run lint
