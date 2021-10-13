@@ -28,6 +28,6 @@ def Slot(
     start: datetime,
     end: datetime,
     _include: Include,
-    NHSD_ServiceIdentifier: str = Header(...),
+    NHSD_Service: str = Header(...),
 ):
     return load_example("slots/GET-success.json")
