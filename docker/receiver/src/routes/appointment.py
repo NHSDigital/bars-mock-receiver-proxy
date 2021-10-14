@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Header, Response, status
 from uuid import UUID
 from .example_loader import load_example
-from .models import AppointmentBody, NhsdToken
+from .models import AppointmentBody
 
 route = APIRouter()
 
@@ -10,12 +10,12 @@ ENTITY_NOT_FOUND = status.HTTP_403_FORBIDDEN  # Spec is probably wrong and statu
 
 
 @route.get("/Appointment")
-def get_appointment(patientIdentifier: str, NHSD_Service: str = Header(...), NHSD_Token: NhsdToken = Header(...)):
+def get_appointment(patientIdentifier: str, NHSD_Service: str = Header(...), NHSD_Token: str = Header(...)):
     return load_example("appointment/GET-success.json")
 
 
 @route.post("/Appointment", status_code=201)
-def create_appointment(NHSD_Service: str = Header(...)):
+def create_appointment(NHSD_Service: str = Header(...), NHSD_Token: str = Header(...)):
     return load_example("appointment/POST-success.txt")
 
 
@@ -30,8 +30,8 @@ def get_appointment_id(response: Response, id: UUID, NHSD_Service: str = Header(
 
 @route.patch("/Appointment/{id}")
 def patch_appointment_id(response: Response,
-                         body: AppointmentBody, id: UUID, NHSD_Service: str = Header(...)
-                         ):
+                         body: AppointmentBody, id: UUID, NHSD_Service: str = Header(...),
+                         NHSD_Token: str = Header(...)):
     if str(id) == existing_appointment_id:
         return ""
     else:
@@ -41,8 +41,8 @@ def patch_appointment_id(response: Response,
 
 @route.put("/Appointment/{id}")
 def put_appointment_id(response: Response,
-                       body: AppointmentBody, id: UUID, NHSD_Service: str = Header(...)
-                       ):
+                       body: AppointmentBody, id: UUID, NHSD_Service: str = Header(...),
+                       NHSD_Token: str = Header(...)):
     if str(id) == existing_appointment_id:
         return ""
     else:
@@ -51,7 +51,8 @@ def put_appointment_id(response: Response,
 
 
 @route.delete("/Appointment/{id}")
-def delete_appointment_id(response: Response, id: UUID, NHSD_Service: str = Header(...)):
+def delete_appointment_id(response: Response, id: UUID, NHSD_Service: str = Header(...),
+                          NHSD_Token: str = Header(...)):
     if str(id) == existing_appointment_id:
         return ""
     else:

@@ -14,12 +14,3 @@ class ServiceRequestBody(BaseModel):
 class AppointmentBody(BaseModel):
     resourceType: str
     meta: Profile
-
-
-class Organisation(BaseModel):
-    meta: Profile
-
-
-class NhsdToken(BaseModel):
-    subject: str
-    organisation: Organisation
