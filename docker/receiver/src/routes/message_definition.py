@@ -5,5 +5,5 @@ route = APIRouter()
 
 
 @route.get("/MessageDefinition")
-def get_metadata(NHSD_Service: str = Header(...)):
+def get_message_definition(NHSD_Service: str = Header(...)):
     return load_example("message_definition/GET-success.json")

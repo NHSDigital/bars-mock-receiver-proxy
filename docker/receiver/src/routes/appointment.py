@@ -1,9 +1,16 @@
 from fastapi import APIRouter, Header, Response, status
 from uuid import UUID
 from .example_loader import load_example
-from .models import AppointmentBody
+from .models import Profile
+from pydantic import BaseModel
 
 route = APIRouter()
+
+
+class AppointmentBody(BaseModel):
+    resourceType: str
+    meta: Profile
+
 
 existing_appointment_id = load_example("appointment/POST-success.txt")
 ENTITY_NOT_FOUND = status.HTTP_403_FORBIDDEN  # Spec is probably wrong and status should be 404
