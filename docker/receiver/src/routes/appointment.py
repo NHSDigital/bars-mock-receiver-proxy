@@ -20,7 +20,7 @@ def create_appointment(NHSD_Service: str = Header(...)):
 
 
 @route.get("/Appointment/{id}")
-def get_appointment_id(response: Response, id: UUID, NHSD_Service: str = Header(...)):
+def get_appointment_id(response: Response, id: UUID, NHSD_Service: str = Header(...), NHSD_Token: str = Header(...)):
     if str(id) == existing_appointment_id:
         return load_example("appointment/id/GET-success.json")
     else:
