@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Header, Response, status
 from uuid import UUID
 from .example_loader import load_example
-from .models import AppointmentBody
+from .models import AppointmentBody, NhsdToken
 
 route = APIRouter()
 
@@ -10,7 +10,7 @@ ENTITY_NOT_FOUND = status.HTTP_403_FORBIDDEN  # Spec is probably wrong and statu
 
 
 @route.get("/Appointment")
-def get_appointment(patientIdentifier: str, NHSD_Service: str = Header(...), NHSD_Token: str = Header(...)):
+def get_appointment(patientIdentifier: str, NHSD_Service: str = Header(...), NHSD_Token: NhsdToken = Header(...)):
     return load_example("appointment/GET-success.json")
 
 
