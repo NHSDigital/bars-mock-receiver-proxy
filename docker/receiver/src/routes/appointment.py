@@ -1,13 +1,10 @@
 from fastapi import APIRouter, Header, Response, status
 from uuid import UUID
-from .examples.example_loader import load_example
+from .example_loader import load_example
+from .models import Profile
 from pydantic import BaseModel
 
 route = APIRouter()
-
-
-class Profile(BaseModel):
-    profile: list
 
 
 class AppointmentBody(BaseModel):
@@ -20,17 +17,17 @@ ENTITY_NOT_FOUND = status.HTTP_403_FORBIDDEN  # Spec is probably wrong and statu
 
 
 @route.get("/Appointment")
-def get_appointment(patientIdentifier: str, NHSD_ServiceIdentifier: str = Header(...)):
+def get_appointment(patientIdentifier: str, NHSD_Service: str = Header(...), NHSD_Token: str = Header(...)):
     return load_example("appointment/GET-success.json")
 
 
 @route.post("/Appointment", status_code=201)
-def create_appointment(NHSD_ServiceIdentifier: str = Header(...)):
+def create_appointment(NHSD_Service: str = Header(...), NHSD_Token: str = Header(...)):
     return load_example("appointment/POST-success.txt")
 
 
 @route.get("/Appointment/{id}")
-def get_appointment_id(response: Response, id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+def get_appointment_id(response: Response, id: UUID, NHSD_Service: str = Header(...), NHSD_Token: str = Header(...)):
     if str(id) == existing_appointment_id:
         return load_example("appointment/id/GET-success.json")
     else:
@@ -40,8 +37,8 @@ def get_appointment_id(response: Response, id: UUID, NHSD_ServiceIdentifier: str
 
 @route.patch("/Appointment/{id}")
 def patch_appointment_id(response: Response,
-                         body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)
-                         ):
+                         body: AppointmentBody, id: UUID, NHSD_Service: str = Header(...),
+                         NHSD_Token: str = Header(...)):
     if str(id) == existing_appointment_id:
         return ""
     else:
@@ -51,8 +48,8 @@ def patch_appointment_id(response: Response,
 
 @route.put("/Appointment/{id}")
 def put_appointment_id(response: Response,
-                       body: AppointmentBody, id: UUID, NHSD_ServiceIdentifier: str = Header(...)
-                       ):
+                       body: AppointmentBody, id: UUID, NHSD_Service: str = Header(...),
+                       NHSD_Token: str = Header(...)):
     if str(id) == existing_appointment_id:
         return ""
     else:
@@ -61,7 +58,8 @@ def put_appointment_id(response: Response,
 
 
 @route.delete("/Appointment/{id}")
-def delete_appointment_id(response: Response, id: UUID, NHSD_ServiceIdentifier: str = Header(...)):
+def delete_appointment_id(response: Response, id: UUID, NHSD_Service: str = Header(...),
+                          NHSD_Token: str = Header(...)):
     if str(id) == existing_appointment_id:
         return ""
     else:
