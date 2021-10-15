@@ -19,6 +19,8 @@ app = FastAPI()
 
 @app.exception_handler(RequestValidationError)
 def validation_exception_handler(request, exc):
+    response = load_example("bad-request.json")
+
     if "Appointment" in str(request.url.path):
         response = load_example("bad-request.json")
     if "registry" in str(request.url.path):
@@ -35,6 +37,7 @@ def validation_exception_handler(request, exc):
         response = load_example("bad-request.json")
     if "MessageDefinition" in str(request.url.path):
         response = load_example("bad-request.json")
+
     return JSONResponse(response, status_code=400)
 
 
