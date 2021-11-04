@@ -11,6 +11,12 @@
     </Request>
   </PreFlow>
     <HTTPTargetConnection>
-      {{ HOSTED_TARGET_CONNECTION }}
+      <SSLInfo>
+        <Enabled>true</Enabled>
+      </SSLInfo>
+      <LoadBalancer>
+        <Server name="hosted-apis"/>
+      </LoadBalancer>
+      <Path>/bref</Path>
     </HTTPTargetConnection>
 </TargetEndpoint>
