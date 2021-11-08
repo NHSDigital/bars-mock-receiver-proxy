@@ -7,7 +7,7 @@ APIGEE_ENVIRONMENTS:
   - name: internal-qa
     display_name: Internal Development - QA
   - name: int
-    display_name: Int Enviornment
+    display_name: Int Environment
 
 ---
 meta:
