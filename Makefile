@@ -51,7 +51,7 @@ release: clean copy-examples publish build-proxy
 
 test:
 #	this target should be used for local unit tests ..  runs as part of the build pipeline
-	make --no-print-directory -C sandbox test
+	#make --no-print-directory -C sandbox test
 
 smoketest:
 #	this target is for end to end smoketests this would be run 'post deploy' to verify an environment is working
