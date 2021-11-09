@@ -1,4 +1,0 @@
-docker_containers:
-  - name: docker
-    dockerfile: "docker/receiver/Dockerfile"
-    path: "docker/receiver"

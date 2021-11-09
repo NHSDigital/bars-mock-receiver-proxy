@@ -4,6 +4,11 @@ DESCRIPTION: This proxy only acts as a mock receiver.
 APIGEE_ENVIRONMENTS:
   - name: internal-dev
     display_name: Internal Development
+  - name: internal-qa
+    display_name: Internal Development - QA
+  - name: int
+    display_name: Int Environment
+
 ---
 meta:
   api:
