@@ -40,7 +40,7 @@ build-proxy:
 	scripts/build_proxy.sh
 
 copy-examples:
-	cp -r  specification/examples docker/receiver/src/routes/examples
+	#cp -r  specification/examples docker/receiver/src/routes/examples
 
 _dist_include="pytest.ini poetry.lock poetry.toml pyproject.toml Makefile build/. tests"
 
