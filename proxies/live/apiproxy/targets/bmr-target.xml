@@ -17,6 +17,6 @@
       <LoadBalancer>
         <Server name="hosted-apis"/>
       </LoadBalancer>
-      <Path>/bref</Path>
+      <Path>/bref-pr-70</Path>
     </HTTPTargetConnection>
 </TargetEndpoint>
