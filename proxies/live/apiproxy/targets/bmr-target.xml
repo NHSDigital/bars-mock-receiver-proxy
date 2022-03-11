@@ -1,5 +1,6 @@
 <TargetEndpoint name="bars-mock-receiver-target">
   <FaultRules/>
+
   <PreFlow>
     <Request>
       <Step>
@@ -17,6 +18,6 @@
       <LoadBalancer>
         <Server name="hosted-apis"/>
       </LoadBalancer>
-      <Path>/bref-70</Path>
+      <Path>/bref</Path>
     </HTTPTargetConnection>
 </TargetEndpoint>
