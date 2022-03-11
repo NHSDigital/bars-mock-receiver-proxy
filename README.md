@@ -31,15 +31,12 @@ The contents of this repository are protected by Crown Copyright (C).
 ```
 $ make install
 ```
-
 #### Updating hooks
 You can install some pre-commit hooks to ensure you can't commit invalid spec changes by accident. These are also run
 in CI, but it's useful to run them locally too.
-
 ```
 $ make install-hooks
 ```
-
 ### Environment Variables
 Various scripts and commands rely on environment variables being set. These are documented with the commands.
 
