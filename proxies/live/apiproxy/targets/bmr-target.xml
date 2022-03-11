@@ -1,5 +1,6 @@
 <TargetEndpoint name="bars-mock-receiver-target">
   <FaultRules/>
+
   <PreFlow>
     <Request>
       <Step>
