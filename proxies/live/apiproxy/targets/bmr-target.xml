@@ -8,6 +8,9 @@
       <Step>
         <Name>SpikeArrest</Name>
       </Step>
+      <Step>
+        <Name>Python.DecodeBase64</Name>
+      </Step>
     </Request>
   </PreFlow>
     <HTTPTargetConnection>
