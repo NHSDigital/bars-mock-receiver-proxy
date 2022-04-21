@@ -1,7 +1,7 @@
 <AssignMessage async="false" continueOnError="false" enabled="true" name="AssignMessage.SetDecodedHeader">
   <Set>
       <Headers>
-          <Header name="NHSD-Target-Identifier">{b64decoded.value}</Header>
+          <Header name="NHSD-Target-Identifier">{IdValue}</Header>
       </Headers>
   </Set>
   <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
