@@ -12,6 +12,9 @@
         <Name>Python.DecodeBase64</Name>
       </Step>
       <Step>
+        <Name>Javascript.ParseDecodedHeader</Name>
+      </Step>
+      <Step>
         <Name>AssignMessage.SetDecodedHeader</Name>
       </Step>
     </Request>
