@@ -1,0 +1,9 @@
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AssignMessage.SetDecodedHeader">
+  <Set>
+      <Headers>
+          <Header name="NHSD-Target-Identifier">{IdValue}</Header>
+      </Headers>
+  </Set>
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>
