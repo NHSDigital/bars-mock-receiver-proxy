@@ -8,16 +8,16 @@
   "issue": [
     {
       "severity": "error",
-      "code": "400",
+      "code": "403",
       "details": {
         "coding": [
           {
-            "system": "http://hl7.org/fhir/ValueSet/operation-outcome",
-            "code": "REC_BAD_REQUEST"
+            "system": "https://fhir.nhs.uk/Codesystem/http-error-codes",
+            "code": "REC_FORBIDDEN"
           }
         ]
       },
-      "diagnostics": "The API was unable to process the request: <further diagnostics information, error message/error text>"
+      "diagnostics": "Failed to Authenticate with <Receiver Identifier (ODS?)>: <further diagnostics information, error message/error text>"
     }
   ]
 }
