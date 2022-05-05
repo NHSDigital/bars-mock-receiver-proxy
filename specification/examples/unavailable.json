@@ -8,16 +8,16 @@
     "issue": [
       {
         "severity": "error",
-        "code": "405",
+        "code": "503",
         "details": {
           "coding": [
             {
               "system": "https://fhir.nhs.uk/Codesystem/http-error-codes",
-              "code": "REC_METHOD_NOT_ALLOWED"
+              "code": "REC_UNAVAILABLE"
             }
           ]
         },
-        "diagnostics": "This method is not allowed: <further diagnostics information, error message/error text>"
+        "diagnostics": "<Receiver identifier (ODS?)> is currently unavailable: <further diagnostics information, error message/error text>"
       }
     ]
   }
